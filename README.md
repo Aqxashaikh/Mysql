@@ -26,3 +26,12 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 mycursor.execute("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))")
+cursor = conn.cursor()
+
+Show databases
+cursor.execute("SHOW DATABASES;")
+for db in cursor.fetchall():
+    print(db)
+
+cursor.close()
+conn.close()
